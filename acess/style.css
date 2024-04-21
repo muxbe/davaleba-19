@@ -1,6 +1,6 @@
 * {
+  padding: auto;
   margin: auto;
-  padding: 5px;
   box-sizing: border-box;
 }
 .header {
@@ -16,9 +16,15 @@
   display: flex;
   justify-content: center;
 }
-
+.first-button {
+  margin-top: 15px;
+  background-color: #495cec;
+  border: 0.1px solid #495cec;
+  border-radius: 15px;
+}
 .input-field {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 input {
@@ -78,6 +84,12 @@ dialog {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+body {
+  background-image: url("acess/image/back.jpg");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 /* .error {
   border: 2px solid red;
