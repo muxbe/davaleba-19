@@ -1,4 +1,4 @@
-const form = document.querySelector("form");
+const form = document.querySelector(".form");
 const nameInput = document.querySelector("#username");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
@@ -16,6 +16,13 @@ const formSection = document.querySelector(".form-section");
 const filter =
   /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 function checkUserName() {
+  if (nameInput.value.length <= 1 || nameInput.value.length > 15) {
+    nameError.textContent = "min 1 charakter max 15";
+    nameInput.classList.remove("correct");
+    nameInput.classList.add("error");
+
+    return false;
+  }
   if (nameInput.value.trim() === "") {
     nameError.textContent = "Username is required";
     nameInput.classList.remove("correct");
@@ -71,8 +78,11 @@ function checkPassword() {
     passwordInput.classList.remove("correct");
     passwordInput.classList.add("error");
     return false;
-  } else if (passwordInput.value.length < 8) {
-    passwordError.textContent = "Password must contain at least 8 characters";
+  } else if (
+    passwordInput.value.length < 8 ||
+    passwordInput.value.length > 20
+  ) {
+    passwordError.textContent = "min 8 characters max20";
     passwordInput.classList.remove("correct");
     passwordInput.classList.add("error");
     return false;
@@ -174,7 +184,7 @@ function closedialog() {
 closebtn.addEventListener("click", closedialog);
 function checknEmail() {
   if (filter.test(nemail.value) === false) {
-    emailError.textContent = "Please enter a valid email address";
+    nemailEror.textContent = "Please enter a valid email address";
 
     nemail.classList.remove("correct");
     nemail.classList.add("error");
@@ -209,8 +219,8 @@ function checknePassword() {
     nepass.classList.remove("correct");
     nepass.classList.add("error");
     return false;
-  } else if (nepass.value.length < 8) {
-    nepassEror.textContent = "Password must contain at least 8 characters";
+  } else if (nepass.value.length < 8 || nepass.value.length > 20) {
+    nepassEror.textContent = "min 8 characters max 20";
     nepass.classList.remove("correct");
     nepass.classList.add("error");
     return false;
@@ -230,10 +240,21 @@ function chekrepss() {
   } else {
     repeatpassEror.textContent = "";
     repeatpass.classList.remove("error");
-    repeatpass.classList.add("currect");
+    repeatpass.classList.add("correct");
     return true;
   }
 }
 nemail.addEventListener("input", checknEmail);
 nepass.addEventListener("input", checknePassword);
 repeatpass.addEventListener("input", chekrepss);
+
+dialog.addEventListener("submit", (e) => {
+  const isnemail = checknEmail();
+  const isnepass = checknePassword();
+  const isrepeatpass = chekrepss();
+  if (isnemail && isnepass && isrepeatpass) {
+    dialog.submit();
+  } else {
+    dialog.show();
+  }
+});

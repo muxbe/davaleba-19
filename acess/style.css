@@ -79,9 +79,10 @@ dialog {
   display: flex;
   justify-content: flex-end;
 }
-.error {
+/* .error {
   border: 2px solid red;
 }
 .correct {
   border: 2px solid green;
 }
+ */
