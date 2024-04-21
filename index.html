@@ -55,7 +55,9 @@
               name="personal-number"
               placeholder="personal-number"
               minlength="11"
+              maxlength="11"
             />
+            <span class="error-message" id="personal-number-error"></span>
           </div>
           <div class="input-field">
             <label for="mobile-number">enter mobile-number</label>
@@ -65,7 +67,9 @@
               name="mobile-number"
               placeholder="mobile-number"
               minlength="9"
+              maxlength="9"
             />
+            <span class="error-message" id="mobile-number-error"></span>
           </div>
           <div class="input-field">
             <label for="job-description">job deskription</label>
@@ -73,10 +77,11 @@
               name="job-description"
               id="job-description"
               placeholder="job-description"
-              cols="30"
+              cols="50"
               rows="10"
               maxlength="50"
             ></textarea>
+            <span class="error-message" id="job-description-error"></span>
           </div>
 
           <div class="input-field">
@@ -84,6 +89,51 @@
           </div>
         </form>
       </div>
+    </section>
+    <section>
+      <dialog>
+        <div class="registration-div">
+          <div class="remove-button-div">
+            <button class="registration-close">x</button>
+          </div>
+          <div class="input-field">
+            <label for="email"> email adress</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email"
+              required
+            />
+            <span class="error-message" id="email-error"></span>
+          </div>
+          <div class="input-field">
+            <label for="password">Enter Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="password"
+              minlength="5"
+            />
+            <span class="error-message" id="password-error"></span>
+          </div>
+          <div class="input-field">
+            <label for="second-password">repeat Password</label>
+            <input
+              type="password"
+              id="second-password"
+              name="second-password"
+              placeholder="second-password"
+              minlength="5"
+            />
+            <span class="error-message" id="secend-password-error"></span>
+          </div>
+          <div class="registration-button-div">
+            <button class="registration-button">registration</button>
+          </div>
+        </div>
+      </dialog>
     </section>
     <script src="acess/my.js"></script>
   </body>
