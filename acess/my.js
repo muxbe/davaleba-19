@@ -258,3 +258,8 @@ dialog.addEventListener("submit", (e) => {
     dialog.show();
   }
 });
+const registrationbtn = dialog.querySelector(".registrationbtn");
+registrationbtn.addEventListener("click", (e) => {
+  formSection.classList.add("form-remove");
+  dialog.show();
+});

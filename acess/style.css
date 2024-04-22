@@ -31,6 +31,7 @@ input {
   outline: none;
   padding: 0 10px;
   height: 30px;
+  background-color: rgb(134, 152, 152);
 }
 .error-message {
   display: block;
@@ -41,8 +42,14 @@ input {
   margin-left: 30%;
   text-align: right;
 }
+textarea {
+  background-color: rgb(134, 152, 152);
+}
 input.error {
   border: 2px solid red;
+}
+::placeholder {
+  color: aliceblue;
 }
 input.correct {
   border: 2px solid green;
@@ -80,16 +87,38 @@ dialog {
   display: flex;
   justify-content: center;
 }
+.registration-close {
+  border: 0.1px solid white;
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+}
+.registration-button {
+  background-color: #495cec;
+  border: 0.1px solid white;
+  border-radius: 20px;
+}
 .remove-button-div {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
 }
 body {
-  background-image: url("acess/image/back.jpg");
+  background-image: url("../schualeduri\ gamocdis/img/big-img.webp");
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+.registration-btn {
+  background-color: rgb(73, 191, 26);
+  border: 0.1px solid rgb(73, 191, 26);
+  border-radius: 20px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* .error {
   border: 2px solid red;
